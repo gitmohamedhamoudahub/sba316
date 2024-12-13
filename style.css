@@ -149,3 +149,12 @@ div{
     width:100%;
     height: auto;
 }
+.copyRights{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: #505050;
+    font-weight: bold;
+    font-size: 11;
+    font-family: 'Courier New', Courier, monospace;
+}
