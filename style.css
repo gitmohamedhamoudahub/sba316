@@ -117,3 +117,12 @@ div{
     align-items: center;
     height: 100%;
 }   
+.scoreCount,
+.startButton,
+.liveCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%
+}
