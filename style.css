@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9602.jpg'); */
+}
+div{
+    border:1px solid black;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+}
+.scoreBar{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.gameBoard{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    height: 450px;
+    width:100%
+}
+.allCards{
+    display: flex;
+    justify-content: start;
+    align-content: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+       width:75%;
+       height: 100%;
+   }
+   .randomCard{
+       width: 25%;
+       height: 100%;
+   }
+   
+   
+   
