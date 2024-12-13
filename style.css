@@ -44,7 +44,7 @@ div{
 }
 .allCards{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-content: start;
     flex-direction: column;
     flex-wrap: wrap;

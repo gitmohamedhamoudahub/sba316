@@ -68,16 +68,11 @@ function getAllCards(){
     allGameCards = [];
     for(let i=0;i<gameLevel;i++)
     {
-        allGameCards.push(i);
+        
+        allGameCards.push(Math.round(Math.random() * 100));
     }
     
-    //document.getElementsByClassName('cardContainer').replaceChildren();
-    //document.getElementsByClassName('flashCardContainer').replaceChildren();
-    // allCards.replaceChildren();
-    
-    // alert(gameLevel);
     allGameCards.forEach((element)=> {
-    // alert(element);
     const flashCardContainer =  document.createElement('div');
     flashCardContainer.classList.add('flashCardContainer');
 
@@ -92,9 +87,7 @@ function getAllCards(){
     
     //Dynamic Cards Construction
     cardBackSide.innerHTML =`<h2>${element}</h2>`
-    
-    
-    //adding cards to interface
+       
     
     // cardContainer.replaceChildren();
 
@@ -118,7 +111,7 @@ function getAllCards(){
 
     const h1Flip = document.createElement('div');
     h1Flip.classList.add('h1Flip');
-    h1Flip.innerHTML = '<h1>12</h1>';
+    h1Flip.innerHTML = '<h1>'+ allGameCards[Math.round(Math.random() * gameLevel)]  +'</h1>';
     
     randomFlashCardContainer.appendChild(h1Flip);
     randomCard.appendChild(randomFlashCardContainer);
