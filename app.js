@@ -70,7 +70,8 @@ function removeAllChildren(parent)
 
 function getAllCards(){
     allGameCards = [];
-    liveCount.innerHTML = 'Lives: ' +  gameLevel/2;
+    liveCounter = (parseInt(gameLevel/2))-1;
+    liveCount.innerHTML = 'Lives: ' +  liveCounter;
     for(let i=0;i<gameLevel;i++)
     {
         
@@ -131,7 +132,12 @@ function getAllCards(){
         //  alert('Card over');
             let cardValue = card.textContent;
             if(cardValue == myRandomValue)
-                alert(' Win...');
+               {
+                scoreCounter += 1 ; 
+                alert(' Win...' + scoreCounter);
+                scoreCount.innerHTML = 'Score: ' + scoreCounter ;
+
+               }
             else
                 console.log('Lose...');
         })
