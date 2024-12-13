@@ -41,6 +41,7 @@ div{
     height: 450px;
     width:100%;
     /* background-color: #505050; */
+    border: 2px solid goldenrod ;
 }
 .allCards{
     display: flex;
@@ -156,7 +157,7 @@ btnLevelSelect:hover{
     height: 83px;   
 }
 .footerContainer p{
-    color:black;
+    color: bisque;
 }
 .copyRights{
     display: flex;

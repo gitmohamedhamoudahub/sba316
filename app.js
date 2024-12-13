@@ -3,7 +3,7 @@ const scoreCount = document.querySelector('.scoreCount');
 const liveCount = document.querySelector('.liveCount');
 const allCards = document.querySelector('.allCards');
 const gameBoard = document.querySelector('.gameBoard');
-
+const cardContainer = document.querySelectorAll('.cardContainer');
 
     
 
@@ -11,9 +11,10 @@ const gameBoard = document.querySelector('.gameBoard');
 const btnPlay =  document.createElement('button');
 
 let scoreCounter = 0;
-let liveCounter = 4;
+let liveCounter = 0;
 let gameLevel = 4;
 let allGameCards = [];
+let myRandomValue ;
 //Loading Page and initialization
 window.onload = () => {
     document.title = '*** Cards Valley - SBA 316 ***';
@@ -36,6 +37,8 @@ startButton.addEventListener('click',
                 Enjoy it!`); 
                             // Enter Number of cards between 4 and 10`);        
             showGameLevelSelection();
+            
+            // resetGameCounters();
             //getAllCards();
     }
 );
@@ -43,7 +46,8 @@ startButton.addEventListener('click',
 
 //reset all game counters
 function resetGameCounters(){
-    
+    liveCounter = gameLevel / 2;
+    console.log(liveCounter);
     scoreCount.innerHTML = 'Score: ' + scoreCounter ;
     liveCount.innerHTML = 'Lives: ' +  liveCounter;
     gameBoard.innerHTML = '';
@@ -66,6 +70,7 @@ function removeAllChildren(parent)
 
 function getAllCards(){
     allGameCards = [];
+    liveCount.innerHTML = 'Lives: ' +  gameLevel/2;
     for(let i=0;i<gameLevel;i++)
     {
         
@@ -111,11 +116,26 @@ function getAllCards(){
 
     const h1Flip = document.createElement('div');
     h1Flip.classList.add('h1Flip');
-    h1Flip.innerHTML = '<h1>'+ allGameCards[Math.round(Math.random() * gameLevel)]  +'</h1>';
+    myRandomValue = allGameCards[Math.round(Math.random() * gameLevel)];
+    h1Flip.innerHTML = '<h1>'+ myRandomValue  +'</h1>';
     
     randomFlashCardContainer.appendChild(h1Flip);
     randomCard.appendChild(randomFlashCardContainer);
     gameBoard.appendChild(randomCard);
+
+     cardBackSide = document.querySelectorAll('.cardBackSide');
+
+    cardBackSide.forEach(card => {
+        card.style = 'cursor:pointer';
+        card.addEventListener('mouseover',(ev)=>{
+        //  alert('Card over');
+            let cardValue = card.textContent;
+            if(cardValue == myRandomValue)
+                alert(' Win...');
+            else
+                console.log('Lose...');
+        })
+    } )
 }
 
 //game level display
@@ -129,7 +149,9 @@ function showGameLevelSelection() {
     const selectedLevel = document.querySelector('input[name="option"]:checked').value ;
     
     console.log("Selected Level:" + selectedLevel);
-   // alert("Selected Level:" + selectedLevel);
+    
+    
+    // alert("Selected Level:" + selectedLevel);
      gameLevel = selectedLevel;
     var ele = document.getElementsByName("option");
     for(var i=0;i<ele.length;i++)
@@ -142,4 +164,19 @@ function showGameLevelSelection() {
     document.querySelector('input[name="option"]:checked').value = 4;
     document.getElementById("gameLevelsSelection").style.display = "none";
     getAllCards();
+    // liveCounter = gameLevel/2;
+    // contact.log(liveCounter);
   }
+
+  
+  
+//   cardContainer.forEach(card => {
+//     card.addEventListener('mouseover',(ev)=>{
+//         let cardValue = card.textContent;
+//         console.log(cardValue);
+//         if(cardValue == myRandomValue)
+//             console.log('You Win...');
+//         else
+//         console.log('You Lose...');
+//     })
+// } )
