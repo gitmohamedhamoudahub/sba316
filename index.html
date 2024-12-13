@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="mainContainer">
-            <!-- core Secion -->
-            <div class="scoreBar">
-                <div class="scoreCount">
-                    Score: 0
-                </div>    
-                <div class="startButton">
-                    
-                </div>
-                <div class="liveCount">
-                    Lives: 3
-                </div>
-            </div>
 
-            <!-- Game Board -->
-            <div class="gameBoard">
-            <!-- Cards -->
-            <!-- Cards to select from     -->
-            <div class="allCards"> 
-                    <!-- All Cards Goes Here Dynamically -->
-                </div> 
-                    <!-- Random Card Section Goes Here -->
-                </div>
-            </div>
-            <div class="footerContainer">
-                <h3>How to Play?</h3>
-                <hr>
-               <p>How to play details goes here</p>
-               <div class="copyRights">
-                 Copy Rights Cards Valley 2024
-            </div>
-            <div id="gameLevelsSelection">
-                <p>Choose Game Level:</p>
-                <hr>
-                <label>
-                  <input type="radio" name="option" value="4" checked> 4 Cards
-                </label><br>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-                <label>
-                  <input type="radio" name="option" value="6"> 6 Cards
-                </label><br>
-                <label>
-                    <input type="radio" name="option" value="8"> 8 Cards
-                  </label><br>
-                <label>
-                    <input type="radio" name="option" value="10"> 10 Cards
-                  </label><br>
-                  <hr>
-                <button onclick="handleGameLevel()" class="btnLevelSelect">OK</button>
-              </div>
-              <!-- <button onclick="showGameLevelSelection()">Show Prompt</button> -->
-            </div>
-             
-        </div>
-        <script src="app.js" async defer></script>
-    </body>
+<body>
+  <div class="mainContainer">
+    <!-- core Secion -->
+    <div class="scoreBar">
+      <div class="scoreCount">
+        Score: 0
+      </div>
+      <div class="startButton">
+
+      </div>
+      <div class="liveCount">
+        Lives: 3
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div class="gameBoard">
+      <!-- Cards -->
+      <!-- Cards to select from     -->
+      <div class="allCards">
+        <!-- All Cards Goes Here Dynamically -->
+      </div>
+      <!-- Random Card Section Goes Here -->
+    </div>
+  </div>
+  <div class="footerContainer">
+    <h3>How to Play?</h3>
+    <hr>
+    <p>How to play details goes here</p>
+    <div class="copyRights">
+      Copy Rights Cards Valley 2024
+    </div>
+    <div id="gameLevelsSelection">
+      <p>Choose Game Level:</p>
+      <hr>
+      <label>
+        <input type="radio" name="option" value="4" checked> 4 Cards
+      </label><br>
+
+      <label>
+        <input type="radio" name="option" value="6"> 6 Cards
+      </label><br>
+      <label>
+        <input type="radio" name="option" value="8"> 8 Cards
+      </label><br>
+      <label>
+        <input type="radio" name="option" value="10"> 10 Cards
+      </label><br>
+      <hr>
+      <button onclick="handleGameLevel()" class="btnLevelSelect">OK</button>
+    </div>
+    <!-- <button onclick="showGameLevelSelection()">Show Prompt</button> -->
+  </div>
+
+  </div>
+  <script src="app.js" async defer></script>
+</body>
+
 </html>

@@ -4,17 +4,21 @@ const liveCount = document.querySelector('.liveCount');
 const allCards = document.querySelector('.allCards');
 const gameBoard = document.querySelector('.gameBoard');
 
+
+    
+
+
 const btnPlay =  document.createElement('button');
 
 let scoreCounter = 0;
 let liveCounter = 4;
 let gameLevel = 4;
-let allGameCards = [1,2,3,4,5,6,7,8,9,10];
+let allGameCards = [];
 //Loading Page and initialization
 window.onload = () => {
     document.title = '*** Cards Valley - SBA 316 ***';
     resetGameCounters();
-    getAllCards();
+    
 };
 
 btnPlay.classList.add('btnNewGame');
@@ -32,22 +36,48 @@ startButton.addEventListener('click',
                 Enjoy it!`); 
                             // Enter Number of cards between 4 and 10`);        
             showGameLevelSelection();
+            //getAllCards();
     }
 );
 
 
 //reset all game counters
 function resetGameCounters(){
+    
     scoreCount.innerHTML = 'Score: ' + scoreCounter ;
     liveCount.innerHTML = 'Lives: ' +  liveCounter;
-
+    gameBoard.innerHTML = '';
+    // gameBoard.removeAllChildren();
+    allCards.innerHTML ='';
+    // removeAllChildren(fla);
+    
+    // removeAllChildren(gameBoard);
+     
+      
+}
+function removeAllChildren(parent)
+{
+    function removeAllChildren(parent) {
+        while (parent.firstChild) {
+          parent.removeChild(parent.firstChild);
+        }
+      }
 }
 
 function getAllCards(){
-allGameCards.forEach((element)=> {
+    allGameCards = [];
+    for(let i=0;i<gameLevel;i++)
+    {
+        allGameCards.push(i);
+    }
+    
+    //document.getElementsByClassName('cardContainer').replaceChildren();
+    //document.getElementsByClassName('flashCardContainer').replaceChildren();
+    // allCards.replaceChildren();
+    
+    // alert(gameLevel);
+    allGameCards.forEach((element)=> {
     // alert(element);
-
-    //Dynamic Cards Construction
     const flashCardContainer =  document.createElement('div');
     flashCardContainer.classList.add('flashCardContainer');
 
@@ -59,10 +89,15 @@ allGameCards.forEach((element)=> {
     
     const cardBackSide =  document.createElement('div');
     cardBackSide.classList.add('cardBackSide');
+    
+    //Dynamic Cards Construction
     cardBackSide.innerHTML =`<h2>${element}</h2>`
     
     
     //adding cards to interface
+    
+    // cardContainer.replaceChildren();
+
     cardContainer.appendChild(cardBackSide);
     cardContainer.appendChild(cardFrontSide);
     flashCardContainer.appendChild(cardContainer);   
@@ -101,8 +136,8 @@ function showGameLevelSelection() {
     const selectedLevel = document.querySelector('input[name="option"]:checked').value ;
     
     console.log("Selected Level:" + selectedLevel);
-    alert("Selected Level:" + selectedLevel);
-    // gameLevel = selectedLevel;
+   // alert("Selected Level:" + selectedLevel);
+     gameLevel = selectedLevel;
     var ele = document.getElementsByName("option");
     for(var i=0;i<ele.length;i++)
         {
@@ -113,4 +148,5 @@ function showGameLevelSelection() {
     // // document.querySelector('input[name="option"]:checked');
     document.querySelector('input[name="option"]:checked').value = 4;
     document.getElementById("gameLevelsSelection").style.display = "none";
+    getAllCards();
   }
